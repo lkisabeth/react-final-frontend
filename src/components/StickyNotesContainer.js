@@ -7,7 +7,8 @@ export default class StickyNotesContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      stickynotes: []
+      stickynotes: [],
+      editingNoteId: null,
     }
   }
 
@@ -23,7 +24,7 @@ export default class StickyNotesContainer extends Component {
     axios.post('http://localhost:3001/api/v1/sticky_notes', {stickynote: {title: '', body: ''}})
     .then(response => {
       const stickynotes = update(this.state.stickynotes, { $splice: [[0, 0, response.data]]})
-      this.setState({stickynotes: stickynotes})
+      this.setState({stickynotes: stickynotes, editingNoteId: response.data.id})
     })
     .catch(error => console.log(error))
   }
