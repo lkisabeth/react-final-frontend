@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import StickyNotesContainer from './components/StickyNotesContainer'
 
 class App extends Component {
   render() {
@@ -8,9 +9,7 @@ class App extends Component {
         <div className="App-header">
           <h1>Sticky Note Board</h1>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <StickyNotesContainer />
       </div>
     );
   }
