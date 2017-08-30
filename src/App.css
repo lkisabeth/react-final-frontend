@@ -10,3 +10,13 @@
 .App-intro {
   font-size: large;
 }
+
+.stickynote {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  background: lightyellow;
+  float: left;
+  font-size: 11px;
+  text-align: left;
+}
