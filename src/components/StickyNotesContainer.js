@@ -21,6 +21,11 @@ export default class StickyNotesContainer extends Component {
   render() {
     return (
       <div>
+        <div>
+          <button className="newNoteButton">
+            New Sticky Note
+          </button>
+        </div>
         {this.state.stickynotes.map((stickynote) => {
           return (
             <StickyNote stickynote={stickynote} key={stickynote.id} />
