@@ -18,11 +18,19 @@ export default class StickyNotesContainer extends Component {
     .catch(error => console.log(error))
   }
 
+  addNewStickyNote = () => {
+    axios.post('http://localhost:3001/api/v1/sticky_notes', {stickynote: {title: '', body: ''}})
+    .then(response => {
+      console.log(response)
+    })
+    .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
         <div>
-          <button className="newNoteButton">
+          <button className="newNoteButton" onClick={this.addNewStickyNote} >
             New Sticky Note
           </button>
         </div>
