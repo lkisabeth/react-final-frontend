@@ -38,9 +38,11 @@ export default class StickyNotesContainer extends Component {
           </button>
         </div>
         {this.state.stickynotes.map((stickynote) => {
-          return (
-            <StickyNote stickynote={stickynote} key={stickynote.id} />
-          )
+          if(this.state.editingNoteId === stickynote.id) {
+            return(<StickyNoteForm stickynote={stickynote} key={stickynote.id} />)
+          } else {
+            return(<StickyNote stickynote={stickynote} key={stickynote.id} />)
+          }
         })}
       </div>
     );
