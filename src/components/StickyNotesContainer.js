@@ -22,7 +22,8 @@ export default class StickyNotesContainer extends Component {
   addNewStickyNote = () => {
     axios.post('http://localhost:3001/api/v1/sticky_notes', {stickynote: {title: '', body: ''}})
     .then(response => {
-      console.log(response)
+      const stickynotes = update(this.state.stickynotes, { $splice: [[0, 0, response.data]]})
+      this.setState({stickynotes: stickynotes})
     })
     .catch(error => console.log(error))
   }
