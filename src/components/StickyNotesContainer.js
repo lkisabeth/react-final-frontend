@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import StickyNote from './StickyNote'
+import StickyNoteForm from './StickyNoteForm'
 import update from 'immutability-helper'
 
 export default class StickyNotesContainer extends Component {
