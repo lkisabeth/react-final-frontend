@@ -10,12 +10,16 @@ export default class StickyNoteForm extends Component {
     }
   }
 
+  handleInput = (e) => {this.setState({[e.target.name]: e.target.value})}
+
   render() {
     return (
       <div className="stickynote">
         <form>
-          <input className="input" type="text" name="title" placeholder="Enter a title" />
-          <textarea className='input' name='body' placeholder="Write your note here"></textarea>
+          <input className="input" type="text" name="title" placeholder="Enter a title"
+            value={this.state.title} onChange={this.handleInput} />
+          <textarea className='input' name='body' placeholder="Write your note here"
+            value={this.state.body} onChange={this.handleInput}></textarea>
         </form>
       </div>
     );
