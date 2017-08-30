@@ -19,8 +19,15 @@ export default class StickyNotesContainer extends Component {
 
   render() {
     return (
-      <div className="">
-        StickyNotes
+      <div>
+        {this.state.stickynotes.map((stickynote) => {
+          return (
+            <div className="stickynote" key={stickynote.id}>
+              <h4>{stickynote.title}</h4>
+              <p>{stickynote.body}</p>
+            </div>
+          )
+        })}
       </div>
     );
   }
