@@ -9,4 +9,15 @@ export default class StickyNoteForm extends Component {
       body: this.props.stickynote.body
     }
   }
+
+  render() {
+    return (
+      <div className="stickynote">
+        <form>
+          <input className="input" type="text" name="title" placeholder="Enter a title" />
+          <textarea className='input' name='body' placeholder="Write your note here"></textarea>
+        </form>
+      </div>
+    );
+  }
 }
