@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class StickyNotesContainer extends Component {
   constructor(props) {
