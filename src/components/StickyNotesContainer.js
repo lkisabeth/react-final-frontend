@@ -49,6 +49,8 @@ export default class StickyNotesContainer extends Component {
     .catch(error => console.log(error))
   }
 
+  resetNotification = () => {this.setState({notification: '', transitionIn: false})}
+
   render() {
     return (
       <div>
