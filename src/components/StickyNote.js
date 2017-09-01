@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 class StickyNote extends Component {
 	handleClick = () => { this.props.onClick(this.props.stickynote.id) }
@@ -7,7 +7,7 @@ class StickyNote extends Component {
 
 	render () {
 		return(
-		  <div className="tile">
+		  <div className="stickynote">
 		  	<span className="deleteButton" onClick={this.handleDelete}>x</span>
 		    <h4 onClick={this.handleClick}>{this.props.stickynote.title}</h4>
 		    <p onClick={this.handleClick}>{this.props.stickynote.body}</p>
@@ -16,4 +16,4 @@ class StickyNote extends Component {
 	}
 }
 
-export default Idea
+export default StickyNote
