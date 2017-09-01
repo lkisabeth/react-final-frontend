@@ -39,6 +39,16 @@ export default class StickyNotesContainer extends Component {
     this.setState({stickynotes: stickynotes, notification: 'All changes saved', transitionIn: true })
   }
 
+  deleteStickyNote = (id) => {
+    axios.delete(`http://localhost:3001/api/v1/sticky_notes/${id}`)
+    .then(response => {
+      const stickyNoteIndex = this.state.stickynotes.findIndex(x => x.id === id)
+      const stickynotes = update(this.state.stickynotes, { $splice: [[stickyNoteIndex, 1]]})
+      this.setState({stickynotes: stickynotes})
+    })
+    .catch(error => console.log(error))
+  }
+
   render() {
     return (
       <div>
