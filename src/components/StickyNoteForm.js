@@ -28,7 +28,7 @@ export default class StickyNoteForm extends Component {
   render() {
     return (
       <div className="stickynote">
-        <form>
+        <form onBlur={this.handleBlur}>
           <input className="input" type="text" name="title" placeholder="Enter a title"
             value={this.state.title} onChange={this.handleInput} />
           <textarea className='input' name='body' placeholder="Write your note here"
