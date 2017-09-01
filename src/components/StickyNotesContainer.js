@@ -70,7 +70,7 @@ export default class StickyNotesContainer extends Component {
                     titleRef= {input => this.title = input}
                     resetNotification={this.resetNotification} />)
           } else {
-            return (<StickyNote stickynote={stickynote} key={stickynote.id} onClick={this.enableEditing}
+            return (<StickyNote stickynote={stickynote} key={stickynote.id} onClick={this.enableEditing(stickynote.id)}
                     onDelete={this.deleteStickyNote} />)
           }
         })}

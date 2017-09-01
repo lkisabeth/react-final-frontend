@@ -10,7 +10,9 @@ export default class StickyNoteForm extends Component {
     }
   }
 
-  handleInput = (e) => {this.setState({[e.target.name]: e.target.value})}
+  handleInput = (e) => {
+    this.setState({[e.target.name]: e.target.value})
+  }
 
   handleBlur = () => {
     const stickynote = {title: this.state.title, body: this.state.body }
@@ -20,7 +22,7 @@ export default class StickyNoteForm extends Component {
       )
     .then(response => {
       console.log(response)
-      this.props.updateIdea(response.data)
+      this.props.updateStickyNote(response.data)
     })
     .catch(error => console.log(error))
   }
