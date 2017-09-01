@@ -51,6 +51,10 @@ export default class StickyNotesContainer extends Component {
 
   resetNotification = () => {this.setState({notification: '', transitionIn: false})}
 
+  enableEditing = (id) => {
+    this.setState({editingNoteId: id}, () => { this.title.focus() })
+  }
+
   render() {
     return (
       <div>
