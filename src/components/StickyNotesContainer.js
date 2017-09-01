@@ -62,12 +62,16 @@ export default class StickyNotesContainer extends Component {
           <button className="newNoteButton" onClick={this.addNewStickyNote} >
             New Sticky Note
           </button>
+          <Notification in={this.state.transitionIn} notification={this.state.notification} />
         </div>
         {this.state.stickynotes.map((stickynote) => {
-          if(this.state.editingNoteId === stickynote.id) {
-            return(<StickyNoteForm stickynote={stickynote} key={stickynote.id} />)
+          if(this.state.editingIdeaId === idea.id) {
+            return(<StickyNoteForm stickynote={stickynote} key={stickynote.id} updateStickyNote={this.updateStickyNote}
+                    titleRef= {input => this.title = input}
+                    resetNotification={this.resetNotification} />)
           } else {
-            return(<StickyNote stickynote={stickynote} key={stickynote.id} />)
+            return (<StickyNote stickynote={stickynote} key={stickynote.id} onClick={this.enableEditing}
+                    onDelete={this.deleteStickyNote} />)
           }
         })}
       </div>
