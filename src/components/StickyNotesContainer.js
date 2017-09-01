@@ -11,6 +11,8 @@ export default class StickyNotesContainer extends Component {
     this.state = {
       stickynotes: [],
       editingNoteId: null,
+      notification: '',
+      transitionIn: false
     }
   }
 
@@ -29,6 +31,12 @@ export default class StickyNotesContainer extends Component {
       this.setState({stickynotes: stickynotes, editingNoteId: response.data.id})
     })
     .catch(error => console.log(error))
+  }
+
+  updateStickyNote = (stickynote) => {
+    const stickyNoteIndex = this.state.stickynotes.findIndex(x => x.id === stickynote.id)
+    const stickynotes = update(this.state.stickynotes, {[stickyNoteIndex]: { $set: stickynote }})
+    this.setState({stickynotes: stickynotes, notification: 'All changes saved', transitionIn: true })
   }
 
   render() {
