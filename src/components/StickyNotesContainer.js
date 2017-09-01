@@ -3,6 +3,7 @@ import axios from 'axios';
 import StickyNote from './StickyNote'
 import StickyNoteForm from './StickyNoteForm'
 import update from 'immutability-helper'
+import Notification from './Notification'
 
 export default class StickyNotesContainer extends Component {
   constructor(props) {
