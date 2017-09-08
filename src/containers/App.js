@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import StickyNotesContainer from './components/StickyNotesContainer'
+import '../App.css';
+import StickyNotesContainer from './StickyNotesContainer'
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -15,4 +16,10 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    stickynotes: state.stickynotes
+  }
+}
+
+export default connect(mapStateToProps)(App);

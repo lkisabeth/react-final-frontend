@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import SticknotesReducer from './stickynotes'
+import stickynotesReducer from './stickynotes_Reducer'
 
 const rootReducer = combineReducers({
-  stickynotes: SticknotesReducer
+  stickynotes: stickynotesReducer
 });
 
 export default rootReducer;
